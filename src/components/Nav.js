@@ -13,6 +13,12 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,28 +26,23 @@ const Example = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Pizza maker</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Item1</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/">Item2</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/">Item3</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/">Item4</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <Navbar color="dark" dark expand="md">
+      <NavbarBrand href="/">Pizza maker</NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <Link className="nav-link" to="/order/pizza">Pizza</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/order/calzone">Calzone</Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/ingredients">Ingredients</Link>
+          </NavItem>
+        </Nav>
+      </Collapse>
+    </Navbar>
   );
 }
 

@@ -2,15 +2,13 @@ import { createContext, useReducer } from "react";
 
 export const ADD_INGREDIENT = "ADD_INGREDIENT";
 
-const initialState = {ingredients: [{name: "pork cut", category: "meat"}, {name: "tomato", category: "vegetables"}, {name: "mozzarella", category: "cheese"}]}
+const initialState = {max: 4, ingredients: [{name: "pork cut", category: "meat"}, {name: "pork cut", category: "meat"}, {name: "tomato", category: "vegetables"}, {name: "mozzarella", category: "cheese"}]}
 
 const itemsReducer = (state, action) => {
     switch (action.type) {
         case ADD_INGREDIENT: {
           state.ingredients.push({name: action.name, category: action.category})
-          return {
-              //
-          };
+          return {...state};
         }
         default: return state;
     }

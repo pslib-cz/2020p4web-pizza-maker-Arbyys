@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-link Link{
+  color:inherit!important;
+}
+
+.list-ingr{
+  margin: 0 auto;
+  width: 75%;
+}
+
+.list-ingr b{
+  font-size: 1.2rem;
+}
